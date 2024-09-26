@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "site: bun dev",
+			"detail": "bun run dev - apps/site",
+			"type": "npm",
+			"script": "dev",
+			"path": "apps/site",
+			"problemMatcher": [],
+			"runOptions": {
+				"runOn": "folderOpen"
+			},
+			"presentation": {
+				"reveal": "never"
+			}
+		},
+		{
+			"label": "api: bun dev",
+			"detail": "bun run dev - apps/api",
+			"type": "npm",
+			"script": "dev",
+			"path": "apps/api",
+			"problemMatcher": [],
+			"runOptions": {
+				"runOn": "folderOpen"
+			},
+			"presentation": {
+				"reveal": "never"
+			}
+		}
+	]
+}
