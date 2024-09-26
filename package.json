@@ -1,0 +1,19 @@
+{
+  "name": "reconta",
+  "version": "1.0.0",
+  "author": "Lucas Saliés Brum <paxa@paxa.dev> (https://paxa.dev)",
+  "type": "module",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "clean": "rm -rf node_modules bun.lockb apps/*/node_modules apps/*/bun.lockb"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.6.2"
+  },
+  "packageManager": "yarn@1.22.21+sha1.1959a18351b811cdeedbd484a8f86c3cc3bbaf72"
+}
