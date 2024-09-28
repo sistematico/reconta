@@ -1,12 +1,15 @@
 import { Hono } from 'hono'
+import { auth } from '@/routes'
 
 const app = new Hono()
 
 app.get('/', (c) => {
-  return c.text('Hello Hono!')
+  return c.text('ReConta API')
 })
 
-export default {
-  fetch: app.fetch,
-  port: 3030
-}
+app.route('/auth', auth)
+
+export default { 
+  port: 3030, 
+  fetch: app.fetch, 
+} 

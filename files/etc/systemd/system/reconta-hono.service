@@ -1,12 +1,12 @@
 [Unit]
-Description=Hono api.reconta.app
+Description=Hono api.reconta.paxa.dev
 After=network.target
 
 [Service]
 Type=simple
-#User=nginx
-WorkingDirectory=/var/www/reconta.app/apps/api
-ExecStart=/home/nginx/.bun/bin/bun run /var/www/reconta.app/apps/api/src/index.ts
+User=nginx
+WorkingDirectory=/var/www/reconta/apps/api
+ExecStart=/home/nginx/.bun/bin/bun run /var/www/reconta/apps/api/src/index.ts
 Restart=always
 RestartSec=15s
 
