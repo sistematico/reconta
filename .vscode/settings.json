@@ -1,7 +1,7 @@
 {
   "npm.packageManager": "bun",
   "editor.tabSize": 2,
-  "window.zoomLevel": 1.2,
+  "window.zoomLevel": 1.3,
   "editor.fontFamily": "'Monaspace Argon', 'Droid Sans Mono', 'monospace', monospace",
   "scss.lint.unknownAtRules": "ignore"
 }

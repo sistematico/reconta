@@ -3,8 +3,8 @@
 PATH=$PATH:/home/nginx/.bun/bin/bun
 
 cd ./apps/api
-$BUN install
+bun install
 
 cd ../site
-$BUN install
-$BUN run build
+bun install
+bun run build

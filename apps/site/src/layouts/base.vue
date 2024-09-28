@@ -1,3 +1,6 @@
+<script setup lang="ts">
+import Navbar from '@/components/navbar.vue'
+</script>
 <template>
   <div class="flex flex-col h-screen">
     <nav class="p-2 mt-0 w-full z-10 fixed top-0">
@@ -8,19 +11,7 @@
           </a>
         </div>
         <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
-          <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
-            <li class="mr-3">
-              <a class="inline-block py-2 px-4 text-white no-underline" href="#">Início</a>
-            </li>
-            <li class="mr-3">
-              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                href="#">link</a>
-            </li>
-            <li class="mr-3">
-              <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                href="#">link</a>
-            </li>
-          </ul>
+          <navbar />
         </div>
       </div>
     </nav>
