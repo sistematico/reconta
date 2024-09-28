@@ -1,11 +1,15 @@
-To install dependencies:
+# 🐷 ReConta Backend
+
+Para instalar as dependências:
+
 ```sh
 bun install
 ```
 
-To run:
+Para rodar em modo de desenvolvimento:
+
 ```sh
 bun run dev
 ```
 
-open http://localhost:3000
+Abra [http://localhost:3030](http://localhost:3030)

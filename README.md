@@ -4,6 +4,8 @@
   <img src="./apps/site/public/images/porco.jpg" alt="ReConta" />
 </p>
 
+[![Deploy](https://github.com/sistematico/reconta/actions/workflows/deploy.yml/badge.svg)](https://github.com/sistematico/reconta/actions/workflows/deploy.yml)
+
 ## Uso
 
 Instalar as dependências:
