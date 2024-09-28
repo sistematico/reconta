@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BUN=/home/nginx/.bun/bin/bun
+PATH=$PATH:/home/nginx/.bun/bin/bun
 
 cd ./apps/api
 $BUN install
