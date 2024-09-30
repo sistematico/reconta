@@ -6,7 +6,14 @@
 
 [![Deploy](https://github.com/sistematico/reconta/actions/workflows/deploy.yml/badge.svg)](https://github.com/sistematico/reconta/actions/workflows/deploy.yml)
 
-## Uso
+## 🗺️ Ecossistema
+
+| Descrição | Produção | Desenvolvimento | README |
+| --- | --- | --- | --- |
+| Site | [https://reconta.app](https://reconta.app) | [http://localhost:5030](http://localhost:5030) | [README.md](./apps/site/README.md) | 
+| API | [https://api.reconta.app](https://api.reconta.app) | [http://localhost:3030](http://localhost:3030) | [README.md](./apps/api/README.md) | 
+
+## 👷 Uso
 
 Instalar as dependências:
 
@@ -20,9 +27,13 @@ Rodar em modo de desenvolvimento:
 bun apps/site/index.ts
 ```
 
-## 📰 Referências
+## 🛠️ Stack
 
-- Em breve...
+- [Bun](https://bun.sh/)
+- [Vue.js](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [Hono](https://hono.dev/)
+- [Drizzle](https://orm.drizzle.team/)
 
 ## 🕐 ChangeLog
 
