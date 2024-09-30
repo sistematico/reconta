@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="https://reconta.app/images/favicon.ico" />
+  <title>ReConta - <!--# echo var="status_text" default="Erro inesperado" --></title>
+  <meta name="description" content="Organizador financeiro simples e rápido" />
+  <meta property="og:title" content="ReConta" />
+  <meta property="og:description" content="Organizador financeiro simples e rápido" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://reconta.app" />
+  <meta property="og:image" content="https://i.imgur.com/g5ARBZ0.png" />
+  <!--# if expr="$status = 502" -->
+  <meta http-equiv="refresh" content="5; url=https://reconta.app">
+  <!--# endif -->
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: "Nunito", Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #14151a;
+      color: #fff;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      margin: 10px 0;
+    }
+
+    img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="child">
+    <img src="https://i.imgur.com/g5ARBZ0.png" alt="ReConta" />
+    <!--# if expr="$status = 502" -->
+    <h2>Estamos atualizando nosso site.</h2>
+    <p>Você será redirecionado em 5 segundos</p>
+    <!--# else -->
+    <h2><!--# echo var="status" default="" --> <!--# echo var="status_text" default="Erro inesperado" --></h2>
+    <p>Clique <a href="https://reconta.app">aqui</a> para voltar.</p>
+    <!--# endif -->
+  </div>
+</body>
+</html>
