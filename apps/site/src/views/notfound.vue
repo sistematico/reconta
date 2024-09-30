@@ -1,5 +1,6 @@
 <template>
   <div>
-    Error 404: Page not found
+    <h1>Erro 404</h1>
+    <p>Página não encontrada.</p>
   </div>
 </template>

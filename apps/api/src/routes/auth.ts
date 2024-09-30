@@ -1,16 +1,26 @@
 import { Hono } from 'hono'
-import { db } from '@/drizzle'
-import * as schema from '@/drizzle/schema'
+import { login, register } from '@/services/auth'
 
 const app = new Hono()
 
+app.post('/signin', async c => { 
+  try {
+    const { user, password } = await c.req.json()
+    const data = await login(user, password)
+    if ('ok' in data && !data.ok) return c.json({ message: 'Erro', error: data, ok: false }, 400)  
+    return c.json(data, 200)  
+  } catch (error) {
+    return c.json({ message: 'Erro', error: JSON.stringify(error), ok: false }, 400)  
+  }  
+})
+
 app.post('/signup', async c => { 
   try {
-    const { name, user, email, password } = await c.req.json()
-    const data = await db.insert(schema.users).values({ user, name, email, password }).returning()
-    return c.text('User created: ' + JSON.stringify(data), 201)  
+    const json = await c.req.json()
+    const data = await register(json)
+    return c.json(data, 201)
   } catch (error) {
-    return c.text('Erro ao criar usuário: ' + error, 400)  
+    return c.json({ message: 'Erro', error: JSON.stringify(error), ok: false }, 400)
   }  
 })
 

@@ -3,5 +3,7 @@ import { routes } from '@/routes'
 
 export const router = createRouter({
   history: createWebHistory(),
+  linkActiveClass: 'text-white',
+  linkExactActiveClass: 'text-white',
   routes,
 })

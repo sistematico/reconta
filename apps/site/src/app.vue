@@ -4,7 +4,7 @@ import Base from '@/layouts/base.vue'
 <template>
   <Base>
     <router-view v-slot="{ Component, route }">
-      <transition name="fade">
+      <transition name="fade" mode="out-in">
         <component :is="Component" :key="route.path" />
       </transition>
     </router-view>

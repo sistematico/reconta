@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import Header from '@/components/header.vue'
+import Navbar from '@/components/navbar.vue'
+
+const appName = import.meta.env.VITE_APP_NAME as string
 </script>
 <template>
   <div class="flex flex-col h-screen">
-    <!-- <nav class="p-2 mt-0 w-full z-10 fixed top-0">
+    <nav class="p-2 mt-0 w-full z-10 fixed top-0">
       <div class="container mx-auto flex flex-wrap items-center">
         <div class="flex w-full md:w-1/2 justify-center md:justify-start font-extrabold">
           <a class="flex items-center no-underline hover:text-white" href="#">
@@ -15,10 +17,9 @@ import Header from '@/components/header.vue'
           <navbar />
         </div>
       </div>
-    </nav> -->
-    <Header />
+    </nav>
 
-    <main class="container mx-auto mt-24 h-full">
+    <main class="container mx-auto mt-24 md:mt-16 h-full">
       <slot />
     </main>
     
