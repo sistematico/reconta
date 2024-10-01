@@ -1,0 +1,214 @@
+{
+  "yaakVersion": "2024.10.1",
+  "yaakSchema": 2,
+  "timestamp": "2024-10-01T09:03:32.630633251",
+  "resources": {
+    "workspaces": [
+      {
+        "model": "workspace",
+        "id": "wk_RrBiWczoSs",
+        "createdAt": "2024-10-01T08:08:51",
+        "updatedAt": "2024-10-01T08:09:52",
+        "name": "ReConta",
+        "description": "",
+        "variables": [
+          {
+            "enabled": true,
+            "name": "",
+            "value": ""
+          }
+        ],
+        "settingValidateCertificates": true,
+        "settingFollowRedirects": true,
+        "settingRequestTimeout": 0
+      }
+    ],
+    "environments": [
+      {
+        "model": "environment",
+        "id": "ev_6mPsxPotXI",
+        "workspaceId": "wk_RrBiWczoSs",
+        "createdAt": "2024-10-01T08:09:35",
+        "updatedAt": "2024-10-01T08:09:47",
+        "name": "ReConta Environment",
+        "variables": [
+          {
+            "enabled": true,
+            "name": "apiUrl",
+            "value": "http://localhost:3030"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": ""
+          }
+        ]
+      }
+    ],
+    "folders": [
+      {
+        "model": "folder",
+        "id": "fl_UgroSbbGpA",
+        "createdAt": "2024-10-01T08:52:46",
+        "updatedAt": "2024-10-01T08:52:46",
+        "workspaceId": "wk_RrBiWczoSs",
+        "folderId": null,
+        "name": "Transactions",
+        "sortPriority": -1727772800000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_efUArxmddd",
+        "createdAt": "2024-10-01T08:52:37",
+        "updatedAt": "2024-10-01T08:52:37",
+        "workspaceId": "wk_RrBiWczoSs",
+        "folderId": null,
+        "name": "Accounts",
+        "sortPriority": -1727772800000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_c8KzgUjoHp",
+        "createdAt": "2024-10-01T08:10:13",
+        "updatedAt": "2024-10-01T08:10:13",
+        "workspaceId": "wk_RrBiWczoSs",
+        "folderId": null,
+        "name": "Auth",
+        "sortPriority": -1727770300000.0
+      }
+    ],
+    "httpRequests": [
+      {
+        "model": "http_request",
+        "id": "rq_ofvdu5oVui",
+        "createdAt": "2024-10-01T09:01:55",
+        "updatedAt": "2024-10-01T09:01:55",
+        "workspaceId": "wk_RrBiWczoSs",
+        "folderId": "fl_UgroSbbGpA",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"type\": \"expense\",\n  \"accountId\": 1,\n  \"userId\": 1,\n  \"ammount\": 500\n}"
+        },
+        "bodyType": "application/json",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "name": "Add Transaction",
+        "sortPriority": -1727770300000.0,
+        "url": "${[ apiUrl ]}/transactions/add",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_nHbzFG0sKs",
+        "createdAt": "2024-10-01T08:59:10",
+        "updatedAt": "2024-10-01T09:03:16",
+        "workspaceId": "wk_RrBiWczoSs",
+        "folderId": "fl_UgroSbbGpA",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"type\": \"expense\",\n  \"accountId\": 1,\n  \"userId\": 1,\n  \"ammount\": 500\n}"
+        },
+        "bodyType": "application/json",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "name": "List Transactions",
+        "sortPriority": -1727770300000.0,
+        "url": "${[ apiUrl ]}/transactions/list",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_aGge1qrQhy",
+        "createdAt": "2024-10-01T08:52:53",
+        "updatedAt": "2024-10-01T08:59:51",
+        "workspaceId": "wk_RrBiWczoSs",
+        "folderId": "fl_efUArxmddd",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"name\": \"Prime\",\n  \"bank\": \"Bradesco\",\n  \"balance\": 1000\n}"
+        },
+        "bodyType": "application/json",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "name": "Add Account",
+        "sortPriority": -1727770300000.0,
+        "url": "${[ apiUrl ]}/accounts/add",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_Wya1vxzh65",
+        "createdAt": "2024-10-01T08:11:25",
+        "updatedAt": "2024-10-01T08:11:25",
+        "workspaceId": "wk_RrBiWczoSs",
+        "folderId": "fl_c8KzgUjoHp",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"email\": \"sistematico@gmail.com\",\n  \"password\": \"123\"\n}"
+        },
+        "bodyType": "application/json",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "name": "SignIn",
+        "sortPriority": -1727770300000.0,
+        "url": "${[ apiUrl ]}/auth/signin",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_mJ7csG1X7r",
+        "createdAt": "2024-10-01T08:10:16",
+        "updatedAt": "2024-10-01T08:11:35",
+        "workspaceId": "wk_RrBiWczoSs",
+        "folderId": "fl_c8KzgUjoHp",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"email\": \"sistematico@gmail.com\",\n  \"password\": \"123\"\n}"
+        },
+        "bodyType": "application/json",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "method": "POST",
+        "name": "SignUp",
+        "sortPriority": -1727770300000.0,
+        "url": "${[ apiUrl ]}/auth/signup",
+        "urlParameters": []
+      }
+    ],
+    "grpcRequests": []
+  }
+}
