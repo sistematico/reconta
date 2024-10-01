@@ -6,6 +6,10 @@
 
 [![Deploy](https://github.com/sistematico/reconta/actions/workflows/deploy.yml/badge.svg)](https://github.com/sistematico/reconta/actions/workflows/deploy.yml)
 
+## Diagrama do Banco de Dados
+
+![Banco](./db.png)
+
 ## 🗺️ Ecossistema
 
 | Descrição | Produção | Desenvolvimento | README |
