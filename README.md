@@ -10,6 +10,8 @@
 
 ![Banco](./db.png)
 
+- [dbdiagram](https://dbdiagram.io/d/ReConta-66fbb4cbf9b1444815013554)
+
 ## 🗺️ Ecossistema
 
 | Descrição | Produção | Desenvolvimento | README |

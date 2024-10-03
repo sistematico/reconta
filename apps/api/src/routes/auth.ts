@@ -5,9 +5,10 @@ const app = new Hono()
 
 app.post('/signin', async c => { 
   try {
-    const { user, password } = await c.req.json()
-    const data = await login(user, password)
-    if ('ok' in data && !data.ok) return c.json({ message: 'Erro', error: data, ok: false }, 400)  
+    const { identifier, password } = await c.req.json()
+    console.log('identifier', identifier, 'password', password)
+    const data = await login(identifier, password)
+    if (!data || !data.ok) return c.json({ message: 'Erro ao entrar na conta', ok: false }, 200)  
     return c.json(data, 200)  
   } catch (error) {
     return c.json({ message: 'Erro', error: JSON.stringify(error), ok: false }, 400)  
@@ -16,8 +17,10 @@ app.post('/signin', async c => {
 
 app.post('/signup', async c => { 
   try {
-    const json = await c.req.json()
-    const data = await register(json)
+    const { username, email, password } = await c.req.json()
+    console.log('username', username, 'email', email, 'password', password)
+    const data = await register(username, email, password)
+    if (!data || !data.ok) return c.json({ message: 'Erro ao registrar uauário', ok: false }, 200)  
     return c.json(data, 201)
   } catch (error) {
     return c.json({ message: 'Erro', error: JSON.stringify(error), ok: false }, 400)

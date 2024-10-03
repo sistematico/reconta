@@ -3,7 +3,8 @@
 PATH=$PATH:/home/nginx/.bun/bin
 
 cd ./apps/api
-[ ! -f .env ] && [ -f .env.example ] && cp .env.example .env
+# [ ! -f .env ] && [ -f .env.example ] && cp .env.example .env
+cp .env.example .env
 bun install
 bun run db:generate
 bun run db:migrate

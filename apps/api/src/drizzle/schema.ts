@@ -1,4 +1,5 @@
 import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core'
+import { relations } from 'drizzle-orm'
 
 export const users = sqliteTable('users', {
   id: integer('id', { mode: 'number' }).primaryKey({ autoIncrement: true }),
@@ -8,6 +9,10 @@ export const users = sqliteTable('users', {
   role: text('role').notNull().default('user')
 })
 
+export const usersRelations = relations(users, ({ many }) => ({
+  tokens: many(tokens)
+}))
+
 export const profiles = sqliteTable('profiles', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   fullname: text('fullname'),
@@ -16,6 +21,22 @@ export const profiles = sqliteTable('profiles', {
   createdAt: text('created_at').notNull().default('now'),
   updatedAt: text('updated_at')
 })
+
+export const tokens = sqliteTable('tokens', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  refreshToken: text('refresh_token'),
+  revoked: integer('revoked', { mode: 'boolean' }).default(false),
+  userId: integer("user_id").references(() => users.id),
+  createdAt: text('created_at').notNull().default('now'),
+  updatedAt: text('updated_at')
+})
+
+export const tokensRelations = relations(tokens, ({ one }) => ({
+  user: one(users, {
+    fields: [tokens.userId],
+    references: [users.id]
+  })
+}))
 
 export const accounts = sqliteTable('accounts', {
   id: integer('id').primaryKey({ autoIncrement: true }),
@@ -34,15 +55,5 @@ export const transactions = sqliteTable('transactions', {
   ammount: integer('ammount').notNull(),
 })
 
-// TABLE account
-//     id
-//     account_name
-//     current_balance
-
-// TABLE transaction
-//     id
-//     account_id
-//     payee
-//     date
-//     amount
-//     category
+export type SelectUser = typeof users.$inferSelect
+export type InsertUser = typeof users.$inferInsert
