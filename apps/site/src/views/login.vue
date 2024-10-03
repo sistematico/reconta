@@ -4,7 +4,6 @@ import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
 import Alert from '@/components/alert.vue'
 
-const url = import.meta.env.VITE_API_URL as string
 const router = useRouter()
 const authStore = useAuthStore()
 
@@ -14,7 +13,7 @@ const form = reactive({
   message: '',
   open: false,
   loading: false,
-  created: false
+  logged: false
 })
 
 function close() {
@@ -29,23 +28,17 @@ async function submit() {
   }
 
   form.loading = true
-
-  const data = await (await fetch(`${url}/auth/signin`, {
-    method: 'post',
-    body: JSON.stringify(form)
-  })).json()
-
   form.open = true
-  form.message = data.message
-
-  console.log(data.tokens.accessToken)
-
-  if (data.tokens.accessToken) {
-    localStorage.setItem('token', data.tokens.accessToken)
-    form.created = true
-  }
-
+  const data = await authStore.login(form.identifier, form.password)
   form.loading = false
+  
+  if (data.message) form.message = data.message
+
+  if (data.ok) {
+    form.logged = true
+    setTimeout(() => router.push('/'), 3000)
+    return
+  }  
 }
 </script>
 <template>
@@ -53,7 +46,7 @@ async function submit() {
     <h2 class="text-center text-3xl font-bold leading-9 tracking-tight">Entrar</h2>
     <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
       <Alert v-if="form.message && form.open" @closed="close">{{ form.message }}</Alert>
-      <form class="space-y-5" @submit.prevent="submit" v-if="!form.created">
+      <form class="space-y-5" @submit.prevent="submit" v-if="!form.logged">
         <div>
           <label for="identifier" class="block font-medium leading-6">Nome de usuário ou e-mail</label>
           <div class="mt-2">

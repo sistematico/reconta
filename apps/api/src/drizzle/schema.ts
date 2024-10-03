@@ -43,6 +43,8 @@ export const accounts = sqliteTable('accounts', {
   name: text('name').notNull(),
   bank: text('bank').notNull(),
   balance: integer('balance').notNull().default(0),
+  account: integer('account'),
+  userId: integer('user_id').references(() => users.id),
   createdAt: text('created_at').notNull().default('now'),
 })
 
@@ -57,3 +59,4 @@ export const transactions = sqliteTable('transactions', {
 
 export type SelectUser = typeof users.$inferSelect
 export type InsertUser = typeof users.$inferInsert
+export type InsertTransaction = typeof transactions.$inferInsert

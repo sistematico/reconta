@@ -10,11 +10,9 @@ const router = createRouter({
 })
 
 router.beforeEach((to, _, next) => {
-  // if (to.name !== 'Login' && !isAuthenticated) next({ name: 'Login' })
-  // else next()
   const authStore = useAuthStore()
   const publicPages = ['/conta/entrar', '/conta/cadastro', '/conta/recuperar', '/conta/verificar']
-  const authRequired = !publicPages.includes(to.path)
+  const authRequired = !publicPages.includes(to.fullPath)
 
   if (authRequired && !authStore.user) {
     authStore.$patch({ returnUrl: to.fullPath })

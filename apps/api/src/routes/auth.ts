@@ -6,7 +6,6 @@ const app = new Hono()
 app.post('/signin', async c => { 
   try {
     const { identifier, password } = await c.req.json()
-    console.log('identifier', identifier, 'password', password)
     const data = await login(identifier, password)
     if (!data || !data.ok) return c.json({ message: 'Erro ao entrar na conta', ok: false }, 200)  
     return c.json(data, 200)  
