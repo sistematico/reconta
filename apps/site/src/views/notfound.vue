@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Erro 404</h1>
+    <h2>Erro 404</h2>
     <p>
       Página não encontrada.<br /><br />
       <router-link 

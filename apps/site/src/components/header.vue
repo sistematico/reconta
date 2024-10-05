@@ -40,8 +40,10 @@ const appName = import.meta.env.VITE_APP_NAME as string || 'ReConta'
     </div>
   </header> -->
 
-  <nav class="w-full z-10 sticky top-0 bg-[#242120] border-b-4 border-b-[#1F1E1C]">
-    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+  <nav class="w-full sticky top-0 mb-5 z-10 bg-[#242120] border-b-4 border-b-[#1F1E1C]">
+    <!-- <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8"> -->
+    <!-- <div class="container mx-auto px-2 sm:px-6 lg:px-8"> -->
+    <div class="container mx-auto">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
@@ -100,10 +102,8 @@ const appName = import.meta.env.VITE_APP_NAME as string || 'ReConta'
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="sm:hidden" :class="{ 'block': !open, 'hidden': open }" id="mobile-menu">
       <div class="space-y-1 px-2 pb-3 pt-2">
-        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <router-link to="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Início</router-link>
+        <router-link to="/" class="block rounded-md bg-[#413937] px-3 py-2 text-base font-medium text-white">Início</router-link>
       </div>
     </div>
   </nav>
-
 </template>

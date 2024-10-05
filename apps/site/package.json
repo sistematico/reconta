@@ -1,10 +1,10 @@
 {
   "name": "@reconta/site",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "bunx --bun vite",
+    "dev": "bunx --bun --watch vite",
     "build": "bunx --bun vite build",
     "preview": "vite preview"
   },

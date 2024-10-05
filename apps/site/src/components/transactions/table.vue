@@ -29,7 +29,7 @@ defineProps<{
 // const keys = props.transactions && props.transactions.length > 0 && Object.keys(props.transactions[0]) || []
 </script>
 <template>
-  <div class="flex min-h-screen items-center justify-center">
+  <div class="flex items-center justify-center mb-5">
     <div class="overflow-x-auto">
       <table class="min-w-full bg-[#242120] shadow-md rounded-xl">
         <thead>
