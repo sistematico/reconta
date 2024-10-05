@@ -22,10 +22,10 @@ export async function login(identifier: string, passwd: string) {
   const { password, ...user } = found
   
   if (!isMatch) return { message: 'Usuário não encontrado', ok: false }
-      
+  
   const tokens = generateTokens(found, randomUUID())
   await db.insert(schema.tokens).values({ refreshToken: tokens.refreshToken, userId: user.id })
-
+  
   return { user, tokens, message: 'Sucesso ao entrar na conta', ok: true }
 }
 

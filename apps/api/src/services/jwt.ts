@@ -11,6 +11,7 @@ function generateRefreshToken(user: SelectUser, jti: string) {
 }
 
 function generateTokens(user: SelectUser, jti: string) {
+  console.log(jti, user)
   const accessToken = generateAccessToken(user)
   const refreshToken = generateRefreshToken(user, jti)
   return { accessToken, refreshToken }

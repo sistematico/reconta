@@ -10,7 +10,7 @@ app.post('/signin', async c => {
     if (!data || !data.ok) return c.json({ message: 'Erro ao entrar na conta', ok: false }, 200)  
     return c.json(data, 200)  
   } catch (error) {
-    return c.json({ message: 'Erro', error: JSON.stringify(error), ok: false }, 400)  
+    return c.json({ message: 'Erro ao logar no sistema', error: JSON.stringify(error), ok: false }, 400)  
   }  
 })
 
@@ -22,7 +22,7 @@ app.post('/signup', async c => {
     if (!data || !data.ok) return c.json({ message: 'Erro ao registrar uauário', ok: false }, 200)  
     return c.json(data, 201)
   } catch (error) {
-    return c.json({ message: 'Erro', error: JSON.stringify(error), ok: false }, 400)
+    return c.json({ message: 'Erro ao se cadastrar no sistema', error: JSON.stringify(error), ok: false }, 400)
   }  
 })
 
